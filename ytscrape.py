@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import os
-import pytube
+from pytube import YouTube
 import sys
 
 domain = ("https://www.youtube.com")
@@ -10,7 +10,6 @@ links = []
 titles = []
 txt = False
 video = False
-
 
 def search_term():
 	user_in = input("> ")
@@ -32,7 +31,7 @@ def options():
 		print("--------------------")
 		print("1. Video")
 		print("2. Text")
-		print("3. Exit")
+		print("3. Back")
 		i = input("> ")
 		if i == "1":
 			if video == True:
@@ -83,6 +82,9 @@ def scrape(search):
 		title = i.get("title")
 		print(title)
 		print(final_url)
+		print('\n')
+		
+
 
 main_menu()
 
